@@ -20,7 +20,7 @@ const Registration = () => {
       password,
     };
 
-    axios.post('/register', userData).then(response => {
+    axios.post('http://localhost:5001/register', userData).then(response => {
       console.log(response.data);
     });
   };
