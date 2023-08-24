@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // Fetch user data if logged in
-    axios.get('/user').then(response => {
+    axios.get('http://localhost:5001/check-login').then(response => {
       setUser(response.data);
     });
   }, []);
