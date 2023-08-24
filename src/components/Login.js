@@ -3,19 +3,26 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const Login = () => {
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleLogin = () => {
-    const loginData = {
+    axios.post('http://localhost:5001/login', {
       username,
-      password,
-    };
-
-    axios.post('/login', loginData).then(response => {
-      console.log(response.data);
-    });
+      password
+    })
+      .then(response => {
+        console.log(response.data.message);
+        setMessage(response.data.message);
+        // Handle successful login, e.g., redirect to a new page
+      })
+      .catch(error => {
+        console.error('Login error:', error.response.data.message);
+        setMessage(error.response.data.message);
+        // Handle login error, display error message to the user
+      });
   };
 
   return (
