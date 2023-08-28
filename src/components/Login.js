@@ -15,7 +15,7 @@ function Login() {
     })
       .then(response => {
         console.log(response.data.message);
-        setMessage(response.data.message);
+        setMessage('Login successful!'); // Set success message
         // Handle successful login, e.g., redirect to a new page
       })
       .catch(error => {
@@ -62,6 +62,9 @@ function Login() {
         <Button variant="primary" onClick={handleLogin}>
           Login
         </Button>
+
+         {/* Display login message */}
+         <p>{message}</p>
       </Form>
     </div>
     </div>
