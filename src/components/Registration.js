@@ -27,14 +27,14 @@ const Registration = () => {
 
   return (
     <div className="registration-bg"
-    // style={{
-    //   background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
-    //   backgroundSize: 'cover',
-    //   minHeight: '100vh', // Ensures the background covers the full viewport height
-    //   display: 'flex',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-    // }}
+    style={{
+      background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiKHZcOzIs5Q6pC1hxOdZTeOpkD-0qmXXmYA&usqp=CAU") no-repeat center center fixed`,
+      backgroundSize: 'cover',
+      minHeight: '100vh', // Ensures the background covers the full viewport height
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
   >
 
 
@@ -92,7 +92,7 @@ const Registration = () => {
           />
         </Form.Group>
 
-        <Button variant="outline-light" onClick={handleRegistration}>
+        <Button variant="outline-secondary" onClick={handleRegistration}>
           Register
         </Button>
       </Form>

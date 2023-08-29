@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
-
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'; 
+import Nav from 'react-bootstrap/Nav';
+
 import Registration from './components/Registration';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
@@ -26,14 +26,14 @@ function App() {
   return (
     <Router>
       <div className="home-bg"
-        // style={{
-        //   background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
-        //   backgroundSize: 'cover',
-        //   minHeight: '100vh', // Ensures the background covers the full viewport height
-        //   display: 'flex',
-        //   alignItems: 'center',
-        //   justifyContent: 'center',
-        // }}
+        style={{
+          background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
+          backgroundSize: 'cover',
+          minHeight: '100vh', // Ensures the background covers the full viewport height
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
         <div className="App">
           <Navbar expand="lg" className="bg-body-tertiary">
@@ -67,8 +67,8 @@ function App() {
             <Route path="/register" component={Registration} />
             <Route path="/login" component={Login} />
             <Route path="/dashboard">
-              {user ? ( // this line checks if a user is logged in
-                <Dashboard />
+              {user ? (
+                <Dashboard user={user} setUser={setUser} />
               ) : (
                 <p>Please log in to access the dashboard.</p>
               )}

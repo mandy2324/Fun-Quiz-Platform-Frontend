@@ -14,7 +14,7 @@ function Dashboard({ user, setUser }) {
           .then(response => {
             console.log(response.data.message);
             setUser(null); // Clear user state after logout
-            history.push('/login');
+            history.push('/login'); // takes the user to login page
           })
           .catch(error => {
             console.error('Logout error:', error.response ? error.response.data.message : error.message);
@@ -25,7 +25,7 @@ function Dashboard({ user, setUser }) {
 
         <div className="dashboard-bg">
             <div className="d-flex justify-content-end mb-3">
-                <Button variant="outline-light" onClick={handleLogout}>
+                <Button variant="outline-secondary" onClick={handleLogout}>
                     Logout
                 </Button>
             </div>
