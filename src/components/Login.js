@@ -3,10 +3,14 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import { useHistory } from 'react-router-dom'; 
+
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+
+  const history = useHistory();
 
   const handleLogin = () => {
     axios.post('http://localhost:5001/login', {
@@ -16,6 +20,9 @@ function Login() {
       .then(response => {
         console.log(response.data.message);
         setMessage('Login successful!'); // Set success message
+        console.log('Redirecting to dashboard...');
+        history.push('/dashboard');
+
         // Handle successful login, e.g., redirect to a new page
       })
       .catch(error => {
@@ -26,15 +33,15 @@ function Login() {
   };
 
   return (
-    <div
-    style={{
-      background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
-      backgroundSize: 'cover',
-      minHeight: '100vh', // Ensures the background covers the full viewport height
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}
+    <div className="login-bg"
+    // style={{
+    //   background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
+    //   backgroundSize: 'cover',
+    //   minHeight: '100vh', // Ensures the background covers the full viewport height
+    //   display: 'flex',
+    //   alignItems: 'center',
+    //   justifyContent: 'center',
+    // }}
   >
       <div>
       <h2>Login</h2>
@@ -59,7 +66,7 @@ function Login() {
           />
         </Form.Group>
 
-        <Button variant="primary" onClick={handleLogin}>
+        <Button variant="outline-light"  onClick={handleLogin}>
           Login
         </Button>
 
