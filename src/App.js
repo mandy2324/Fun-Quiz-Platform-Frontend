@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -54,18 +54,20 @@ function App() {
 
 
         <Container className="mt-4">
+        <Routes>
           <Route path="/" exact>
-            <div>
-              <h2>Home</h2>
+            <>
+              <>Home</>
               {user ? (
-                <p>Welcome, {user.first_name}!</p>
+                <>Welcome, {user.first_name}!</>
               ) : (
-                <p>Please register or log in.</p>
+                <>Please register or log in.</>
               )}
-            </div>
+            </>
           </Route>
           <Route path="/register" component={Registration} />
           <Route path="/login" component={Login} />
+        </Routes>
         </Container>
       </div>
       </div>
