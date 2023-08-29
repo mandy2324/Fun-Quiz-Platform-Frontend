@@ -1,0 +1,17 @@
+/* styles.css */
+.home-bg {
+    background-color:  rgb(9, 35, 39);
+  }
+  
+  .registration-bg {
+    background-color: rgb(102, 195, 255);
+  }
+  
+  .login-bg {
+    background-color: rgb(152, 114, 132);
+  }
+  
+  .dashboard-bg {
+    background-color: rgb(220, 225, 233);
+  }
+  
