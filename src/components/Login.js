@@ -34,14 +34,14 @@ function Login() {
 
   return (
     <div className="login-bg"
-    // style={{
-    //   background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
-    //   backgroundSize: 'cover',
-    //   minHeight: '100vh', // Ensures the background covers the full viewport height
-    //   display: 'flex',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-    // }}
+    style={{
+      background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfS8ou0joRKLTUoBbz3tZtsn2aP6FrqZDohUL1Mq402jPZgdiPmer7Z-2dyzEPK4TkzbU&usqp=CAU") no-repeat center center fixed`,
+      backgroundSize: 'cover',
+      minHeight: '100vh', // Ensures the background covers the full viewport height
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
   >
       <div>
       <h2>Login</h2>
@@ -65,8 +65,8 @@ function Login() {
             onChange={e => setPassword(e.target.value)}
           />
         </Form.Group>
-
-        <Button variant="outline-light"  onClick={handleLogin}>
+<br></br>
+        <Button variant="outline-secondary"  onClick={handleLogin}>
           Login
         </Button>
 
