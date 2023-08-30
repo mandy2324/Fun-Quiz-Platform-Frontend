@@ -3,7 +3,7 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -18,62 +18,59 @@ function Login() {
       password
     })
       .then(response => {
-        console.log(response.data.message);
+        console.log("Login successful:", response.data.message);
         setMessage('Login successful!'); // Set success message
         console.log('Redirecting to dashboard...');
         history.push('/dashboard');
-
-        // Handle successful login, e.g., redirect to a new page
       })
       .catch(error => {
         console.error('Login error:', error.response.data.message);
         setMessage(error.response.data.message);
-        // Handle login error, display error message to the user
       });
   };
 
   return (
     <div className="login-bg"
-    style={{
-      background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfS8ou0joRKLTUoBbz3tZtsn2aP6FrqZDohUL1Mq402jPZgdiPmer7Z-2dyzEPK4TkzbU&usqp=CAU") no-repeat center center fixed`,
-      backgroundSize: 'cover',
-      minHeight: '100vh', // Ensures the background covers the full viewport height
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}
-  >
+      style={{
+        background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfS8ou0joRKLTUoBbz3tZtsn2aP6FrqZDohUL1Mq402jPZgdiPmer7Z-2dyzEPK4TkzbU&usqp=CAU") no-repeat center center fixed`,
+        backgroundSize: 'cover',
+        minHeight: '100vh', // Ensures the background covers the full viewport height
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <div>
-      <h2>Login</h2>
-      <Form>
-        <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-          />
-        </Form.Group>
+        <h2>Login</h2>
+        <Form>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+            />
+          </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </Form.Group>
-<br></br>
-        <Button variant="outline-secondary"  onClick={handleLogin}>
-          Login
-        </Button>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          <br></br>
+          <Button variant="outline-secondary" onClick={handleLogin}>
+            Login
+          </Button>
 
-         {/* Display login message */}
-         <p>{message}</p>
-      </Form>
-    </div>
+          {/* Display login message */}
+          <p>{message}</p>
+        </Form>
+      </div>
     </div>
   );
 };

@@ -1,17 +1,63 @@
-/* styles.css
-.home-bg {
-    background-color:  rgb(9, 35, 39);
-  }
-  
-  .registration-bg {
-    background-color: rgb(102, 195, 255);
-  }
-  
-  .login-bg {
-    background-color: rgb(152, 114, 132);
-  }
-  
-  .dashboard-bg {
-    background-color: rgb(220, 225, 233);
-  }
-   */
+/* FlipCard.css */
+
+.flip-card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 250%;
+  /* width: 41rem; */
+
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(122, 61, 61, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #f7f7f7;
+}
+
+/* the button on dashboard */
+.sticky-button {
+  position: sticky;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.custom-link {
+  text-decoration: none; /* Remove underline */
+  color: #240505; /* Change font color to your desired color */
+  text-decoration: solid;
+  border-style: solid;
+  border-width: medium;
+  padding: 0.5rem;
+}
