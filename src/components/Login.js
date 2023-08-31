@@ -34,7 +34,7 @@ function Login() {
       style={{
         background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfS8ou0joRKLTUoBbz3tZtsn2aP6FrqZDohUL1Mq402jPZgdiPmer7Z-2dyzEPK4TkzbU&usqp=CAU") no-repeat center center fixed`,
         backgroundSize: 'cover',
-        minHeight: '100vh', // Ensures the background covers the full viewport height
+        minHeight: '67vh', 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -67,7 +67,7 @@ function Login() {
             Login
           </Button>
 
-          {/* Display login message */}
+
           <p>{message}</p>
         </Form>
       </div>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import Card from 'react-bootstrap/Card';
-// import ListGroup from 'react-bootstrap/ListGroup';
 import '../styles.css';
 import { useHistory } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -36,7 +34,7 @@ function QuestionList() {
       <Button variant="outline-secondary" onClick={handleBackToDashboard} className="sticky-button">
         Back to Dashboard
       </Button>
-      
+
       <h2>Quiz Questions</h2>
       {questions.map((question, index) => (
         <div
@@ -51,15 +49,13 @@ function QuestionList() {
             <div className="flip-card-back">
               <strong>Answer:</strong> {question.answer}
               <br />
-              {/* <strong>Category:</strong> {question.category}
-              <br />
-              <strong>Difficulty:</strong> {question.difficulty} */}
+
             </div>
           </div>
         </div>
       ))}
 
-      
+
     </div>
   );
 }

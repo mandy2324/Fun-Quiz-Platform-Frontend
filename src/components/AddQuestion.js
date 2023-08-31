@@ -26,6 +26,10 @@ function AddQuestion() {
       .then((response) => {
         console.log(response.data.message);
         setMessage('Question added successfully!');
+        setQuestion('');     // Reset question state
+        setAnswer('');       // Reset answer state
+        setCategory('');     // Reset category state
+        setDifficulty('');   // Reset difficulty state
       })
       .catch((error) => {
         console.error('Error adding question:', error.response.data.message);
@@ -39,10 +43,15 @@ function AddQuestion() {
 
   return (
     <div className="container mt-4">
+      
+      <br/>
+
       <Button variant="outline-secondary" onClick={handleBackToDashboard} className="sticky-button">
         Back to Dashboard
       </Button>
       <br/>
+
+      <br />
       <h2>Add New Question</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="question">
@@ -88,14 +97,14 @@ function AddQuestion() {
             required
           />
         </Form.Group>
-
+        <br />
         <Button variant="outline-secondary" type="submit">
           Add Question
         </Button>
-
+      <br/>
         <p className="mt-2">{message}</p>
       </Form>
-      
+
     </div>
   );
 }
