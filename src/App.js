@@ -13,7 +13,7 @@ import Dashboard from './components/Dashboard';
 import QuizList from './components/QuestionList';
 import AddQuestion from './components/AddQuestion';
 import './styles.css';
-import QuestionList from './components/QuestionList';
+import QuestionListAdmin from './components/QuestionListAdmin';
 
 
 function App() {
@@ -30,16 +30,7 @@ function App() {
         console.error("Error fetching user data:", error);
       });
   }, []);
-  const handleLogout = () => {
-    axios.get('http://localhost:5001/logout')
-      .then(response => {
-        console.log(response.data.message);
-        setUser(null); // Clear user state after logout
-      })
-      .catch(error => {
-        console.error('Logout error:', error.response ? error.response.data.message : error.message);
-      });
-  };
+
 
   return (
     <Router>
@@ -48,7 +39,7 @@ function App() {
           style={{
             background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HbenPKbopMZmrWrxgYWBj-d3OqT3crsCSg&usqp=CAU") no-repeat center center fixed`,
             backgroundSize: 'cover',
-            minHeight: '100vh', // Ensures the background covers the full viewport height
+            minHeight: '100vh', 
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -57,7 +48,7 @@ function App() {
           <div className="App">
             <Navbar expand="lg" className="bg-body-tertiary">
               <Container>
-                <Navbar.Brand href="#home">Fun Interactive Learning Quiz</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">Fun Interactive Learning Quiz</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav>
@@ -75,9 +66,9 @@ function App() {
             <Container className="mt-4">
               <Route path="/" exact>
                 <div>
-                  <h2>Home</h2>
+                  <h2>HOME</h2>
                   {user ? (
-                    <p>Welcome, {user.first_name}!</p>
+                    <p>WELCOME TO OUR PAGE</p>
                   ) : (
                     <p>Please register or log in.</p>
                   )}
@@ -85,16 +76,19 @@ function App() {
               </Route>
               <Route path="/register" component={Registration} />
               <Route path="/login" component={Login} />
-
-
               <Route path="/dashboard">
                 <Dashboard user={user} setUser={setUser} />
               </Route>
               <Route path="/quiz-list">  <QuizList /> </Route>
-              <Route path="/add-question"> <AddQuestion/></Route>
+              <Route path="/add-question"> <AddQuestion /></Route>
+              <Route path="/admin-question-list" ><QuestionListAdmin /></Route>
             </Container>
           </div>
+
         </div>
+        <footer className="app-footer">
+          <p>This App was made by Adriel, Jess, Mandy, and Zayn.</p>
+        </footer>
       </AuthProvider>
     </Router>
 

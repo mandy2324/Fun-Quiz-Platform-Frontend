@@ -30,7 +30,7 @@ const Registration = () => {
     style={{
       background: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiKHZcOzIs5Q6pC1hxOdZTeOpkD-0qmXXmYA&usqp=CAU") no-repeat center center fixed`,
       backgroundSize: 'cover',
-      minHeight: '100vh', // Ensures the background covers the full viewport height
+      minHeight: '80vh', 
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
