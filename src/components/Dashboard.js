@@ -8,7 +8,7 @@ import { useAuth } from '../AuthContext';
 import Card from 'react-bootstrap/Card';
 import '../styles.css';
 // import QuestionListAdmin from './QuestionListAdmin';
-
+// import Quiz from './Quiz';
 
 
 
@@ -45,44 +45,49 @@ function Dashboard() {
       </div>
       <div>
         <h2>Welcome to the Dashboard</h2>
-        <br/>
+        <br />
 
         <div className="card-container">
-  <br />
+          <br />
 
-  <Link to="/add-question" className="dashboard-card-link">
-    <Card className="dashboard-card">
-      <Card.Body>
-        <Card.Title>Add Question</Card.Title>
-        <Card.Text>Add a new question to the quiz.</Card.Text>
-      </Card.Body>
-    </Card>
-  </Link>
+          <Link to="/add-question" className="dashboard-card-link">
+            <Card className="dashboard-card">
+              <Card.Body>
+                <Card.Title>Add Question</Card.Title>
+                <Card.Text>Add a new question to the quiz.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+          <br/>
+          <Link to="/quiz-list" className="dashboard-card-link">
+            <Card className="dashboard-card">
+              <Card.Body>
+                <Card.Title>Question List</Card.Title>
+                <Card.Text>View the list of quiz questions.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+          <br/>
+          <Link to="/admin-question-list" className="dashboard-card-link">
+            <Card className="dashboard-card">
+              <Card.Body>
+                <Card.Title>Question List (Admin)</Card.Title>
+                <Card.Text>View and delete quiz questions.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+      <br/>
+          <Link to="/quiz" className="dashboard-card-link">
+            <Card className="dashboard-card">
+              <Card.Body>
+                <Card.Title>Quiz</Card.Title>
+                <Card.Text>Take a quiz and test your knowledge.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+          <br/>
 
-  <br />
-
-  <Link to="/quiz-list" className="dashboard-card-link">
-    <Card className="dashboard-card">
-      <Card.Body>
-        <Card.Title>Question List</Card.Title>
-        <Card.Text>View the list of quiz questions.</Card.Text>
-      </Card.Body>
-    </Card>
-  </Link>
-
-  <br />
-
-  <Link to="/admin-question-list" className="dashboard-card-link">
-    <Card className="dashboard-card">
-      <Card.Body>
-        <Card.Title>Question List (Admin)</Card.Title>
-        <Card.Text>View and delete quiz questions.</Card.Text>
-      </Card.Body>
-    </Card>
-  </Link>
-
-  <br />
-</div>
+        </div>
 
       </div>
     </div>
@@ -91,7 +96,7 @@ function Dashboard() {
 
 
 
-      export default Dashboard;
+export default Dashboard;
 
 
 
