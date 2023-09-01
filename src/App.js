@@ -14,6 +14,7 @@ import QuizList from './components/QuestionList';
 import AddQuestion from './components/AddQuestion';
 import './styles.css';
 import QuestionListAdmin from './components/QuestionListAdmin';
+import Quiz from './components/Quiz';
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
               <Route path="/quiz-list">  <QuizList /> </Route>
               <Route path="/add-question"> <AddQuestion /></Route>
               <Route path="/admin-question-list" ><QuestionListAdmin /></Route>
+              <Route path="/quiz"> <Quiz/> </Route>
             </Container>
           </div>
 
